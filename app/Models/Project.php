@@ -16,4 +16,8 @@ class Project extends Model
         'reading_time',
         'image'
     ];
+
+    // public function Technology(){
+    //     return $this
+    // }
 }
