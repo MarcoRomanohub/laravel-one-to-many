@@ -25,4 +25,5 @@ Creazione del modello `Project` con relativa migrazione, seeder, controller e ro
 
 13. Aggiungere, fra le rotte admin, anche la gestione (CRUD) della tabella “projects”.
 Aggiungete anche due tabelle “technologies” e “types” con le relative CRUD (meglio se su una pagina sola)
+14. Aggiungiamo la relazione one to many fra i progetti e i type.
 

@@ -2,6 +2,13 @@
 
 @section('content')
     <h1>Progetti</h1>
+
+    @if (session('deleted'))
+        <div class="alert alert-success " role="alert">
+            {{ session('deleted') }}
+        </div>
+    @endif
+
     <table class="table">
         <thead>
             <tr>
@@ -17,13 +24,21 @@
                     <td>{{ $project->id }}</td>
                     <td>{{ $project->title }}</td>
                     <td>{{ $project->updated_at }}</td>
-                    <td>
+                    <td class=" d-flex">
                         <a href="{{ route('admin.projects.show', $project) }}" class="btn btn-success">
                             <i class="fa-solid fa-eye"></i>
                         </a>
-                        <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning">
+                        <a href="{{ route('admin.projects.edit', $project) }}" class="btn btn-warning mx-2 ">
                             <i class="fa-solid fa-pencil"></i>
                         </a>
+                        <form action="{{ route('admin.projects.destroy', $project) }}" method="POST"
+                            onsubmit="return confirm('Sei sicuro di voler eliminare il Progetto?')">
+                            @csrf
+                            @method('DELETE')
+                            <button class="btn btn-danger ">
+                                <i class="fa-solid fa-trash"></i>
+                            </button>
+                        </form>
                     </td>
                 </tr>
             @empty
