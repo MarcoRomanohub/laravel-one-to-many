@@ -33,6 +33,8 @@ Route::middleware(['auth', 'verified'])
         Route::resource('types', TypeController::class)->except([
             'create', 'edit', 'show'
         ]);
+
+        Route::get('technology-projects', [TechnologyController::class, 'technologyProjects'])->name('technology_projects');
     });
 
 Route::middleware('auth')->group(function () {

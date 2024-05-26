@@ -31,6 +31,12 @@
                     Tipologie
                 </a>
             </li>
+            <li>
+                <a href="{{ route('admin.technology_projects') }}">
+                    <i class="fa-solid fa-list"></i>
+                    Elenco tech/projects
+                </a>
+            </li>
         </ul>
     </nav>
 </aside>

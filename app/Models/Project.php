@@ -17,7 +17,8 @@ class Project extends Model
         'image'
     ];
 
-    // public function Technology(){
-    //     return $this
-    // }
+    public function Technology()
+    {
+        return $this->belongsTo(Technology::class);
+    }
 }
